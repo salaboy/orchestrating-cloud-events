@@ -113,5 +113,8 @@ Finally, if you run `kubectl get pods` you should see all the pods and replicas 
 
 # Questions? Issues? want to contribute to make it better?  Please get in touch
 
-If you have questions please create in issue in this repository or drop me a message in [twitter @salaboy](http://twitter.com/salaboy)
+All the services, code and frameworks used here are Open Source, so I invite you to contribute back to make them better. 
+
+If you have any questions, doubts or you want to contribute please create in issue in this repository or drop me a message in [twitter @salaboy](http://twitter.com/salaboy). Let's create aweomse things together! 
+
 
