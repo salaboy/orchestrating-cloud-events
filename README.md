@@ -28,7 +28,7 @@ A tickets company is creating a new website to sell high-demand concert tickets.
 The company needs to implement a Queue system to make sure that customers are served in a a first come/first served basis. 
 
 ## Application flow
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AIuPtyM2cX8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Application Flow](https://www.youtube.com/embed/AIuPtyM2cX8)
 
 
 
