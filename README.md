@@ -111,7 +111,8 @@ Finally, if you run `kubectl get pods` you should see all the pods and replicas 
 
 # Business Vsibility and Orchestration
 
-<ADD VIDEO HERE>
+[![](http://img.youtube.com/vi/oX4AoOBZpFU/0.jpg)](http://www.youtube.com/watch?v=oX4AoOBZpFU "Business Visibility and Orchestration")
+
 
 
 # Questions? Issues? want to contribute to make it better?  Please get in touch
