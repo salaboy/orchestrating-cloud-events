@@ -121,4 +121,6 @@ All the services, code and frameworks used here are Open Source, so I invite you
 
 If you have any questions, doubts or you want to contribute please create in issue in this repository or drop me a message in [twitter @salaboy](http://twitter.com/salaboy). Let's create aweomse things together! 
 
+# Conferences
+- [TDC Sao Paulo 2020 - Slides](https://www.slideshare.net/salaboy/cloud-events-orchestration-with-knative-and-zeebe/)
 
