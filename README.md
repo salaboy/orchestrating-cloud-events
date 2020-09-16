@@ -76,7 +76,7 @@ All the services are packaged as Helm Charts and can be installed from the follo
 
 ## Install Front End
 
-> helm install frontend zeebe-internal/customer-waiting-room-app
+> helm install frontend zeebe-jx/customer-waiting-room-app --set env.PAYMENTS_SERVICE=http://payments-service.default.svc.cluster.local --set env.PAYMENTS_SERVICE_EXTERNAL=http://payments-service.default.34.91.231.32.xip.io --set env.QUEUE_SERVICE=http://queue-service.default.svc.cluster.local --set env.TICKETS_SERVICE=http://tickets-service.default.svc.cluster.local
 
 ## Install Zeebe Cloud Events Router
 
@@ -95,7 +95,8 @@ Depending if you are going to use a Camunda Cloud Account or your hosted Zeebe C
 
 > helm install cloud-events-router --set env.ZEEBE_CLIENT_BROKER_CONTACTPOINT=**<CONTACT_POINT>** --set env.ZEEBE_CLIENT_ID=**<CLIENT_ID>** --set env.ZEEBE_CLIENT_SECRET=**<CLIENT_SECRET>** --set env.ZEEBE_AUTHORIZATION_SERVER_URL=https://login.cloud.camunda.io/oauth/token --set env.ZEEBE_CLIENT_SECURITY_PLAINTEXT=false zeebe-internal/zeebe-cloud-events-router
 
-**CLIENT_ID**, **CLIENT_SECRET>** and **<CONTACT_POINT>** can be obtained after creating a Cluster in Camunda Cloud and then creating a Client, as shown in the  screens above. 
+**<CLIENT_ID>**, **CLIENT_SECRET>** and **<CONTACT_POINT>** can be obtained after creating a Cluster in Camunda Cloud and then creating a Client, as shown in the  screens above. 
+
 
 ## Checking that all your services are correctly installed
 
