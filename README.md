@@ -16,7 +16,7 @@ Source code for the example service:
 
 - Kubernetes Cluster
 - Helm 3.x installed and configured
-- Install Knative 0.16.0
+- Install Knative 0.17.0
   - [Install Knative Serving](https://knative.dev/docs/install/any-kubernetes-cluster/#installing-the-serving-component)
   - [Install Knative Eventing](https://knative.dev/docs/install/any-kubernetes-cluster/#installing-the-eventing-component). Notice that you also need to install the **In Memory Channel** and the **MT-Channel-Based Broker** as instructed in the Knative Eventing Guides linked here. 
 - [Camunda Cloud Account](https://camunda.com/products/cloud/) To run a Managed Zeebe Cluster for Orchestration. It is free to try. 
