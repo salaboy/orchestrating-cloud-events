@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-broker-config
+  namespace: knative-eventing
+data:
+  # Number of topic partitions
+  default.topic.partitions: "10"
+  # Replication factor of topic messages.
+  default.topic.replication.factor: "1"
+  # A comma separated list of bootstrap servers. (It can be in or out the k8s cluster)
+  bootstrap.servers: "knative-meetup-kafka-kafka-bootstrap.kafka:9092"
