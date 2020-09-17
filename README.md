@@ -195,4 +195,4 @@ If you have any questions, doubts or you want to contribute please create in iss
 
 # Conferences
 - [TDC Sao Paulo 2020 - Slides](https://www.slideshare.net/salaboy/cloud-events-orchestration-with-knative-and-zeebe/)
-
+- [Knative Meetup 2020 - Sept Slides](https://www.slideshare.net/salaboy/orchestrating-cloud-events-knative-meetup-2020)
