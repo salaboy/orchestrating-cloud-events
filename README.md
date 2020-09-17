@@ -73,6 +73,9 @@ For visibility and for orchestration you can just tap into the event stream with
 
 ![With Zeebe](imgs/tickets-service-knative-zeebe.png)
 
+
+![Triggers No Router](imgs/tickets-events-and-triggers-checklist-with-router.png)
+
 If you decide to use Zeebe/Camunda Cloud now you have visibility and orchestration features at your disposal. You can use Camunda Operate, inside Camunda Cloud or installed by Zeebe Helm Charts to monitor and operate your orchestration flows:
 
 ![Camunda Operate](imgs/camunda-operate.png)
@@ -130,6 +133,10 @@ If you run `kubectl get ksvc` (Knative Services) you should see two `payments-se
 Finally, if you run `kubectl get pods` you should see all the pods and replicas for the services, by default they are configured to have just a single replica. The two Knative Services (payments and frontend) have two containers inside the pod, as Knative automatically inject a sidecar (proxy container) to route traffic.
 
 ![Pods](imgs/kubectl-get-pods.png)
+
+## Zeebe & Knative Integration
+
+![Zeebe & Knative Integration](imgs/tickets-service-knative-zeebe-detailed.png)
 
 # Business Visibility and Orchestration
 
