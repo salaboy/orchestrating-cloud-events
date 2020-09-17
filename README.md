@@ -2,7 +2,7 @@
 
 Orchestrating Cloud Events with Knative and Zeebe.
 
-In this repository you will find all the resources for the talk named after this repository.
+In this repository, you will find all the resources for the talk named after this repository.
 
 Source code for the example service:
 - [User Interface](https://github.com/salaboy/customer-waiting-room-app)
@@ -25,7 +25,7 @@ Source code for the example service:
   
   
 # Scenario
-A "tickets selling" company is creating a new website to sell high-demand concert tickets. In such scenarios, tickets go on sale a predefined date at a certain time (Monday 9am for example). There is usually less tickets than people wanting to buy them, for example, 20K available tickets and 100K people waiting to buy them. 
+A "tickets selling" company is creating a new website to sell high-demand concert tickets. In such scenarios, tickets go on sale a predefined date at a certain time (Monday 9 am for example). There are usually less tickets than people wanting to buy them, for example, 20K available tickets and 100K people waiting to buy them. 
 The company needs to implement a Queue system to make sure that customers are served in a **first come/first served** basis. 
 
 ## Application flow
