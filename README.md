@@ -1,10 +1,8 @@
-# Orchestrating Cloud Events
+# Orchestrating Cloud Events (with Knative and Zeebe)
 
-Orchestrating Cloud Events with Knative and Zeebe.
+In this repository, you will find all the resources for the presentations named after this repository. In the reference sections you can find the links to the slides associated with those presentations. 
 
-In this repository, you will find all the resources for the talk named after this repository.
-
-Source code for the example service:
+Source code for the example services:
 - [User Interface](https://github.com/salaboy/customer-waiting-room-app)
 - [Tickets Service](https://github.com/salaboy/tickets-service/)
 - [Payments Service](https://github.com/salaboy/payments-service/)
@@ -81,14 +79,21 @@ You can do this by creating a workflow model to capture these events:
 
 This provides us **Visibility** and understanding about how things are going in our distributed applications. By just adding a model and tapping into the Knative Event Broker that is handling the application messages, we can quickly understand where our applications flows are at any giving point in time. You can use Operate to monitor the executions. 
 
-![Camunda Operate](imgs/camunda-operate.png)
+![Camunda Operate](imgs/operate-visualization.png)
 
 
 From an architectural point of view you are just tapping into the existing application events.  
 
 ![With Zeebe](imgs/tickets-service-knative-zeebe.png)
 
+
+As you can imagine, now you now need to create the **Knative Triggers** (Subscriptions) to be also routed to the Cloud Events Router so the workflow engine can tap into these events. 
+
+![Triggers No Router](imgs/tickets-events-and-triggers-checklist-with-router.png)
+
 Then you can proceed to **decorate/enchance** our models with features provided by the workflow engine. A common business requirement are notifications and time-based reminders. 
+
+![Tickets V2](imgs/tickets-v2.png)
 
 In the second version of the workflow model, you can see two **Timer Boundary Events** attached to the **Payment Sent Receive Task**. The bottom one, represents a non-interrupting behaviour, which means that the flow is not going to be interrupted by this event. It is configured to send a reminder to the user every 10 seconds. 
 
@@ -96,21 +101,22 @@ The top one, is an **Interrupting Timer Boundary Event** which, when fired, will
 
 Both Timer Events are connected to **Service Tasks** that in this setup can be configured to **emit Cloud Events**.
 
-![Tickets V2](imgs/tickets-v2.png)
-
 You can deploy the second version of the model, as the Application Front end is ready to accept the new Cloud Events produced by the model. You should see notifications being pushed to the client side (Browser) via websockets in the payment screen. 
 
+Finally, there is nothing stopping you to do a full orchestration of your events, that means to take control of consuming and emitting events when needed to define the flow of the application. 
+
 ![Tickets V3](imgs/tickets-v3.png)
+
+The third version of the model emits Cloud Events at different stages, which are now part of the main flow of the application. In this version you can clearly track how many customer abandoned the purchase flow and at which stage. 
+
+![Camunda Operate](imgs/camunda-operate.png)
+
+Version four shows how you can add flow control constructs to decide how the flow should go under specific circumstances. In this example you can see that for larger orders a different payment method is required. 
 
 ![Tickets V4](imgs/tickets-v4.png)
 
 
 
-![Triggers No Router](imgs/tickets-events-and-triggers-checklist-with-router.png)
-
-If you decide to use Zeebe/Camunda Cloud now you have visibility and orchestration features at your disposal. You can use Camunda Operate, inside Camunda Cloud or installed by Zeebe Helm Charts to monitor and operate your orchestration flows:
-
-![Camunda Operate](imgs/camunda-operate.png)
 
 
 # Install Services
