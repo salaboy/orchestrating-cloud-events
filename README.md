@@ -102,7 +102,7 @@ The top one, is an **Interrupting Timer Boundary Event** which, when fired, will
 Both Timer Events are connected to **Service Tasks** that in this setup can be configured to **emit Cloud Events**.
 
 Because now you are interested also in emitting events, it makes sense to look into more details of the architecture and how Zeebe integrates with Knative: 
-![With Zeebe Details](imgs/tickets-service-knative-zeebe-details.png)
+![With Zeebe Details](imgs/tickets-service-knative-zeebe-detailed.png)
 
 You can deploy the second version of the model, as the Application Front end is ready to accept the new Cloud Events produced by the model. You should see notifications being pushed to the client side (Browser) via websockets in the payment screen. 
 
