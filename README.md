@@ -79,15 +79,31 @@ The first thing that you can do with Zeebe is to gain visibility of what is goin
 You can do this by creating a workflow model to capture these events: 
 ![Tickets V1](imgs/tickets-v1.png)
 
+This provides us **Visibility** and understanding about how things are going in our distributed applications. By just adding a model and tapping into the Knative Event Broker that is handling the application messages, we can quickly understand where our applications flows are at any giving point in time. You can use Operate to monitor the executions. 
+
+![Camunda Operate](imgs/camunda-operate.png)
+
+
+From an architectural point of view you are just tapping into the existing application events.  
+
+![With Zeebe](imgs/tickets-service-knative-zeebe.png)
+
+Then you can proceed to **decorate/enchance** our models with features provided by the workflow engine. A common business requirement are notifications and time-based reminders. 
+
+In the second version of the workflow model, you can see two **Timer Boundary Events** attached to the **Payment Sent Receive Task**. The bottom one, represents a non-interrupting behaviour, which means that the flow is not going to be interrupted by this event. It is configured to send a reminder to the user every 10 seconds. 
+
+The top one, is an **Interrupting Timer Boundary Event** which, when fired, will interrupt the normal flow of our model. In such situation (after X minutes), the reservation time out, and you can enforce in the backend (by creating new subscrition for these events) to clean up and release the current reservation's tickets. 
+
+Both Timer Events are connected to **Service Tasks** that in this setup can be configured to **emit Cloud Events**.
+
 ![Tickets V2](imgs/tickets-v2.png)
+
+You can deploy the second version of the model, as the Application Front end is ready to accept the new Cloud Events produced by the model. You should see notifications being pushed to the client side (Browser) via websockets in the payment screen. 
 
 ![Tickets V3](imgs/tickets-v3.png)
 
 ![Tickets V4](imgs/tickets-v4.png)
 
-For visibility and for orchestration you can just tap into the event stream with Zeebe/Camunda Cloud and the architecture doesn't change, you just have one more publisher/subscriber to the broker. 
-
-![With Zeebe](imgs/tickets-service-knative-zeebe.png)
 
 
 ![Triggers No Router](imgs/tickets-events-and-triggers-checklist-with-router.png)
