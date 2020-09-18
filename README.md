@@ -33,7 +33,8 @@ The company needs to implement a Queue system to make sure that customers are se
 
 ## Application flow
 
-[![](http://img.youtube.com/vi/AIuPtyM2cX8/0.jpg)](http://www.youtube.com/watch?v=AIuPtyM2cX8 "Application Flow")
+Application Overview (Click in the image to see video)
+[![](http://img.youtube.com/vi/DSavo0HU03c/0.jpg)](http://www.youtube.com/watch?v=DSavo0HU03c "Application Flow")
 
 
 
