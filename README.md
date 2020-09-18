@@ -92,7 +92,11 @@ As you can imagine, now you now need to create the **Knative Triggers** (Subscri
 
 ![Triggers No Router](imgs/tickets-events-and-triggers-checklist-with-router.png)
 
-Then you can proceed to **decorate/enchance** our models with features provided by the workflow engine. A common business requirement are notifications and time-based reminders. 
+The following video show the first version of our model in action (click to open in YouTube): 
+[![](http://img.youtube.com/vi/w9FinwvFC0g/0.jpg)](http://www.youtube.com/watch?v=w9FinwvFC0g "Understand")
+
+
+Then you can proceed to **decorate/enchance** your models with features provided by the workflow engine. A common business requirement are notifications and time-based reminders. 
 
 ![Tickets V2](imgs/tickets-v2.png)
 
@@ -101,6 +105,9 @@ In the second version of the workflow model, you can see two **Timer Boundary Ev
 The top one, is an **Interrupting Timer Boundary Event** which, when fired, will interrupt the normal flow of our model. In such situation (after X minutes), the reservation time out, and you can enforce in the backend (by creating new subscrition for these events) to clean up and release the current reservation's tickets. 
 
 Both Timer Events are connected to **Service Tasks** that in this setup can be configured to **emit Cloud Events**.
+
+The following video show the second version of our model in action (click to open in YouTube): 
+[![](http://img.youtube.com/vi/j1lKku2XeNU/0.jpg)](http://www.youtube.com/watch?v=j1lKku2XeNU "Decorate")
 
 Because now you are interested also in emitting events, it makes sense to look into more details of the architecture and how Zeebe integrates with Knative: 
 ![With Zeebe Details](imgs/tickets-service-knative-zeebe-detailed.png)
@@ -113,13 +120,14 @@ Finally, there is nothing stopping you to do a full orchestration of your events
 
 The third version of the model emits Cloud Events at different stages, which are now part of the main flow of the application. In this version you can clearly track how many customer abandoned the purchase flow and at which stage. 
 
-![Camunda Operate](imgs/camunda-operate.png)
+
+The following video show the third version of the model in action (click to open in YouTube): 
+[![](http://img.youtube.com/vi/gsHxWutO_bE/0.jpg)](http://www.youtube.com/watch?v=gsHxWutO_bE "Orchestrate")
+
 
 Version four shows how you can add flow control constructs to decide how the flow should go under specific circumstances. In this example you can see that for larger orders a different payment method is required. 
 
 ![Tickets V4](imgs/tickets-v4.png)
-
-
 
 
 
@@ -178,13 +186,9 @@ Finally, if you run `kubectl get pods` you should see all the pods and replicas 
 
 ## Zeebe & Knative Integration
 
+A more detailed view of the Zeebe Components is shown in the following diagram: 
+
 ![Zeebe & Knative Integration](imgs/tickets-service-knative-zeebe-detailed.png)
-
-# Business Visibility and Orchestration
-
-
-
-[![](http://img.youtube.com/vi/oX4AoOBZpFU/0.jpg)](http://www.youtube.com/watch?v=oX4AoOBZpFU "Business Visibility and Orchestration")
 
 
 
