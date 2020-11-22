@@ -139,18 +139,18 @@ All the services are packaged as Helm Charts and can be installed from the follo
 
 ## Installing Tickets Service
 
-> helm install tickets zeebe-internal/tickets-service --set env.K_SINK=http://broker-ingress.knative-eventing.svc.cluster.local
+> helm install tickets zeebe-internal/tickets-service 
 
 ## Install Payments Service
-> helm install payments zeebe-internal/payments-service --set env.K_SINK=http://broker-ingress.knative-eventing.svc.cluster.local
+> helm install payments zeebe-internal/payments-service 
 
 ## Install Queue Serivce 
 
-> helm install queue zeebe-internal/queue-service --set env.K_SINK=http://broker-ingress.knative-eventing.svc.cluster.local
+> helm install queue zeebe-internal/queue-service 
 
 ## Install Front End
 
-> helm install frontend zeebe-internal/customer-waiting-room-app --set env.PAYMENTS_SERVICE=http://payments-service.default.svc.cluster.local --set env.PAYMENTS_SERVICE_EXTERNAL=http://payments-service.default.34.91.231.32.xip.io --set env.QUEUE_SERVICE=http://queue-service.default.svc.cluster.local --set env.TICKETS_SERVICE=http://tickets-service.default.svc.cluster.local
+> helm install frontend zeebe-internal/customer-waiting-room-app --set env.PAYMENTS_SERVICE=http://payments-service.default.svc.cluster.local --set env.PAYMENTS_SERVICE_EXTERNAL=http://payments-service.default.<REPLACE YOUR IP HERE>.xip.io --set env.QUEUE_SERVICE=http://queue-service.default.svc.cluster.local --set env.TICKETS_SERVICE=http://tickets-service.default.svc.cluster.local
 
 ## Install Zeebe Cloud Events Router
 
@@ -167,7 +167,7 @@ Once the Client is created you can access the **Connection Information** that yo
 
 Depending if you are going to use a Camunda Cloud Account or your hosted Zeebe Cluster you will need to change the ENVIRONMENT variables provided to the following command: 
 
-> helm install cloud-events-router --set env.ZEEBE_CLIENT_BROKER_CONTACTPOINT=**<CONTACT_POINT>** --set env.ZEEBE_CLIENT_ID=**<CLIENT_ID>** --set env.ZEEBE_CLIENT_SECRET=**<CLIENT_SECRET>** --set env.ZEEBE_AUTHORIZATION_SERVER_URL=https://login.cloud.camunda.io/oauth/token --set env.ZEEBE_CLIENT_SECURITY_PLAINTEXT=false   zeebe-internal/zeebe-cloud-events-router
+> helm install cloud-events-router --set env.ZEEBE_CLIENT_BROKER_CONTACTPOINT=**<CONTACT_POINT>** --set env.ZEEBE_CLIENT_ID=**<CLIENT_ID>** --set env.ZEEBE_CLIENT_SECRET=**<CLIENT_SECRET>** --set env.ZEEBE_AUTHORIZATION_SERVER_URL=https://login.cloud.camunda.io/oauth/token --set env.ZEEBE_CLIENT_SECURITY_PLAINTEXT=false --set knativeDeployment=true  zeebe-internal/zeebe-cloud-events-router
 
 **<CLIENT_ID>**, **CLIENT_SECRET>** and **<CONTACT_POINT>** can be obtained after creating a Cluster in Camunda Cloud and then creating a Client, as shown in the  screens above. 
 
@@ -189,7 +189,6 @@ Finally, if you run `kubectl get pods` you should see all the pods and replicas 
 A more detailed view of the Zeebe Components is shown in the following diagram: 
 
 ![Zeebe & Knative Integration](imgs/tickets-service-knative-zeebe-detailed.png)
-
 
 
 # Questions? Issues? want to contribute to make it better?  Please get in touch
