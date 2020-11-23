@@ -14,11 +14,11 @@ Source code for the example services:
 
 - Kubernetes Cluster
 - Helm 3.x installed and configured
-- Install Knative 0.17.0
+- Install Knative 0.18.0
   - [Install Knative Serving](https://knative.dev/docs/install/any-kubernetes-cluster/#installing-the-serving-component)
   - [Install Knative Eventing](https://knative.dev/docs/install/any-kubernetes-cluster/#installing-the-eventing-component). 
     - You can install the **In Memory Channel** and the **MT-Channel-Based Broker** or
-    - You can install the **Kafka** Channel and Broker
+    - You can install the **Kafka** Channel and Broker by using the files provided in this repository
 
 To add Zeebe you will need to choose between **Camunda Cloud** or **Zeebe in your Kubernetes Cluster with Helm**:
 - [Camunda Cloud Account](https://camunda.com/products/cloud/) To run a Managed Zeebe Cluster for Microservices and Events Orchestration. It is free to try, you don't need to install anything.  
