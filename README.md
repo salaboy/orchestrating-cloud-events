@@ -34,6 +34,7 @@ The company needs to implement a Queue system to make sure that customers are se
 ## Application flow
 
 Application Overview (Click in the image to see video)
+
 [![](http://img.youtube.com/vi/DSavo0HU03c/0.jpg)](http://www.youtube.com/watch?v=DSavo0HU03c "Application Flow")
 
 
@@ -202,3 +203,4 @@ If you have any questions, doubts or you want to contribute please create in iss
 - **Knative Meetup 2020 - Sept** 
   - [Slides](https://www.slideshare.net/salaboy/orchestrating-cloud-events-knative-meetup-2020)
   - [Recording/Video](https://www.youtube.com/watch?v=vOSsHp-6gto&feature=emb_logo)
+- [QCon Hub 2020]()
